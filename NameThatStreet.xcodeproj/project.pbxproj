@@ -21,6 +21,9 @@
 		24899B5B1CC3445C00BCF0A5 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24899B5A1CC3445C00BCF0A5 /* NavigationController.m */; };
 		24899B5E1CC3455D00BCF0A5 /* ProfileNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24899B5D1CC3455D00BCF0A5 /* ProfileNavigationController.m */; };
 		24899B621CC3495D00BCF0A5 /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 24899B611CC3495D00BCF0A5 /* Colors.m */; };
+		24ABF3D01CC5573A001BA33A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24ABF3CF1CC5573A001BA33A /* MapKit.framework */; };
+		24ABF3D21CC57038001BA33A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24ABF3D11CC57038001BA33A /* CoreLocation.framework */; };
+		24ABF3D51CC57D59001BA33A /* AddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ABF3D41CC57D59001BA33A /* AddressAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,10 @@
 		24899B5D1CC3455D00BCF0A5 /* ProfileNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileNavigationController.m; sourceTree = "<group>"; };
 		24899B601CC3494200BCF0A5 /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 		24899B611CC3495D00BCF0A5 /* Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
+		24ABF3CF1CC5573A001BA33A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		24ABF3D11CC57038001BA33A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		24ABF3D31CC57D59001BA33A /* AddressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressAnnotation.h; sourceTree = "<group>"; };
+		24ABF3D41CC57D59001BA33A /* AddressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24ABF3D21CC57038001BA33A /* CoreLocation.framework in Frameworks */,
+				24ABF3D01CC5573A001BA33A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +93,8 @@
 		24899B1A1CC3225A00BCF0A5 = {
 			isa = PBXGroup;
 			children = (
+				24ABF3D11CC57038001BA33A /* CoreLocation.framework */,
+				24ABF3CF1CC5573A001BA33A /* MapKit.framework */,
 				24899B251CC3225A00BCF0A5 /* NameThatStreet */,
 				24899B3F1CC3225A00BCF0A5 /* NameThatStreetTests */,
 				24899B241CC3225A00BCF0A5 /* Products */,
@@ -169,8 +180,10 @@
 		24899B581CC343FA00BCF0A5 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				24899B541CC3434900BCF0A5 /* MapViewController.m */,
 				24899B531CC3434900BCF0A5 /* MapViewController.h */,
+				24899B541CC3434900BCF0A5 /* MapViewController.m */,
+				24ABF3D31CC57D59001BA33A /* AddressAnnotation.h */,
+				24ABF3D41CC57D59001BA33A /* AddressAnnotation.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -295,6 +308,7 @@
 				2459FE1B1CC35350009AE744 /* VocabTableViewCell.m in Sources */,
 				24899B551CC3434900BCF0A5 /* MapViewController.m in Sources */,
 				24899B5E1CC3455D00BCF0A5 /* ProfileNavigationController.m in Sources */,
+				24ABF3D51CC57D59001BA33A /* AddressAnnotation.m in Sources */,
 				24899B521CC33F2100BCF0A5 /* VocabTableViewController.m in Sources */,
 				24899B281CC3225A00BCF0A5 /* main.m in Sources */,
 			);
