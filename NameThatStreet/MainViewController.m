@@ -56,15 +56,11 @@
 
 - (void)setSelectedViewController:(__kindof UIViewController *)selectedViewController {
     [super setSelectedViewController:selectedViewController];
-    
-    NSInteger selectedIndex = [self indexOfViewController:selectedViewController];
-    [self setTabBarHidden:(selectedIndex == MapViewController)];
 }
 
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
     [super setSelectedIndex:selectedIndex];
-    [self setTabBarHidden:(selectedIndex == MapViewController)];
 }
 
 #pragma mark - Private Functions

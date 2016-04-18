@@ -46,13 +46,7 @@
     for (UIViewController *controller in self.viewControllers) {
         controller.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     }
-    
-    if ([viewController isKindOfClass:[MapViewController class]]) {
-        [self setNavigationBarHidden:YES animated:NO];
-    }
-    else {
-        [self setNavigationBarHidden:NO animated:NO];
-    }
+    [self setNavigationBarHidden:NO animated:NO];
 }
 
 @end

@@ -7,7 +7,26 @@
 //
 
 #import "MapViewController.h"
+#import <MapKit/MapKit.h>
+
+@interface MapViewController ()
+
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+
+@end
 
 @implementation MapViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.mapView = [[MKMapView alloc] init];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Private Functions
 
 @end
