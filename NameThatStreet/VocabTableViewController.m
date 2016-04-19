@@ -11,6 +11,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "Colors.h"
 #import "Vocab.h"
+#import "VocabDoc.h"
+#import "VocabDatabase.h"
 
 @interface VocabTableViewController() <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
@@ -20,8 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Vocab *hello = [[Vocab alloc] initWithName:@"Hello"];
-    self.vocabs = [NSMutableArray arrayWithObjects:hello, nil];
+    NSMutableArray *loadVocabs = [VocabDatabase loadVocabDocs];
+    self.vocabs = loadVocabs;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,8 +65,9 @@
     UIAlertAction *saveAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Add", @"Add")
                                                          style:UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction *action) {
-                                                           Vocab *vocab = [[Vocab alloc] initWithName:alertController.textFields[0].text];
+                                                           VocabDoc *vocab = [[VocabDoc alloc] initWithName:alertController.textFields[0].text :@""];
                                                            [self.vocabs addObject:vocab];
+                                                           [vocab saveData];
                                                            [self.tableView reloadData];
                                                        }];
     [alertController addAction:saveAction];
@@ -85,8 +88,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     VocabTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VocabCell" forIndexPath:indexPath];
-    Vocab *currentVocab = [self.vocabs objectAtIndex:indexPath.row];
-    cell.vocabLabel.text = currentVocab.name;
+    VocabDoc *currentVocab = [self.vocabs objectAtIndex:indexPath.row];
+    cell.vocabLabel.text = currentVocab.data.name;
     cell.speakButton.tag = indexPath.row;
     
     if( !cell ) {
@@ -106,7 +109,10 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        VocabDoc *doc = [self.vocabs objectAtIndex:indexPath.row];
+        [doc deleteDoc];
         [self.vocabs removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject: indexPath] withRowAnimation:UITableViewRowAnimationBottom];
         [tableView reloadData];
     }
 }

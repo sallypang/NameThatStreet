@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "VocabDoc.h"
+#import "VocabDatabase.h"
+#import "VocabTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     return YES;
 }
 

@@ -25,6 +25,8 @@
 		24ABF3D21CC57038001BA33A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24ABF3D11CC57038001BA33A /* CoreLocation.framework */; };
 		24ABF3D51CC57D59001BA33A /* AddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ABF3D41CC57D59001BA33A /* AddressAnnotation.m */; };
 		24ABF3D81CC68EEA001BA33A /* Vocab.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ABF3D71CC68EEA001BA33A /* Vocab.m */; };
+		24ABF3DB1CC69C44001BA33A /* VocabDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ABF3DA1CC69C44001BA33A /* VocabDoc.m */; };
+		24ABF3DE1CC6A01F001BA33A /* VocabDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ABF3DD1CC6A01F001BA33A /* VocabDatabase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,10 @@
 		24ABF3D41CC57D59001BA33A /* AddressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressAnnotation.m; sourceTree = "<group>"; };
 		24ABF3D61CC68EEA001BA33A /* Vocab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vocab.h; sourceTree = "<group>"; };
 		24ABF3D71CC68EEA001BA33A /* Vocab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vocab.m; sourceTree = "<group>"; };
+		24ABF3D91CC69C44001BA33A /* VocabDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VocabDoc.h; sourceTree = "<group>"; };
+		24ABF3DA1CC69C44001BA33A /* VocabDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VocabDoc.m; sourceTree = "<group>"; };
+		24ABF3DC1CC6A01F001BA33A /* VocabDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VocabDatabase.h; sourceTree = "<group>"; };
+		24ABF3DD1CC6A01F001BA33A /* VocabDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VocabDatabase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,10 @@
 			children = (
 				24ABF3D61CC68EEA001BA33A /* Vocab.h */,
 				24ABF3D71CC68EEA001BA33A /* Vocab.m */,
+				24ABF3DC1CC6A01F001BA33A /* VocabDatabase.h */,
+				24ABF3DD1CC6A01F001BA33A /* VocabDatabase.m */,
+				24ABF3D91CC69C44001BA33A /* VocabDoc.h */,
+				24ABF3DA1CC69C44001BA33A /* VocabDoc.m */,
 				2459FE191CC35350009AE744 /* VocabTableViewCell.h */,
 				2459FE1A1CC35350009AE744 /* VocabTableViewCell.m */,
 				24899B501CC33F2100BCF0A5 /* VocabTableViewController.h */,
@@ -306,10 +316,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				24899B2E1CC3225A00BCF0A5 /* MainViewController.m in Sources */,
+				24ABF3DB1CC69C44001BA33A /* VocabDoc.m in Sources */,
 				24899B2B1CC3225A00BCF0A5 /* AppDelegate.m in Sources */,
 				24899B4F1CC33F0400BCF0A5 /* ProfileViewController.m in Sources */,
 				24899B5B1CC3445C00BCF0A5 /* NavigationController.m in Sources */,
 				24899B621CC3495D00BCF0A5 /* Colors.m in Sources */,
+				24ABF3DE1CC6A01F001BA33A /* VocabDatabase.m in Sources */,
 				2459FE1B1CC35350009AE744 /* VocabTableViewCell.m in Sources */,
 				24899B551CC3434900BCF0A5 /* MapViewController.m in Sources */,
 				24899B5E1CC3455D00BCF0A5 /* ProfileNavigationController.m in Sources */,

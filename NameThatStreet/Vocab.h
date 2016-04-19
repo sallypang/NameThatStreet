@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Vocab : NSObject <NSCoding>
+@interface Vocab : NSObject <NSCoding> {
+    NSString *_name;
+    NSString *_translatedName;
+}
 
-@property (nonnull, nonatomic, strong) NSString *name;
-@property (nullable, nonatomic, strong) NSString *translatedName;
+@property (copy) NSString *name;
+@property (copy) NSString *translatedName;
 
-- (id)initWithName:(NSString *)name;
+- (id)initWithName:(NSString *)name :(NSString *)translatedName;
 
 @end
