@@ -61,7 +61,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-66-U64">
-                                            <rect key="frame" x="562" y="26" width="30" height="30"/>
+                                            <rect key="frame" x="562" y="17" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="IKN-An-TZm"/>
                                                 <constraint firstAttribute="width" constant="30" id="kx1-YV-6Mc"/>
@@ -77,14 +77,25 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u35-28-b2K">
+                                            <rect key="frame" x="530" y="17" width="24" height="30"/>
+                                            <state key="normal" image="TranslateIcon"/>
+                                            <connections>
+                                                <action selector="translateAction:" destination="79K-c1-4x1" eventType="touchUpInside" id="U6f-s1-wAN"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="lKv-66-U64" secondAttribute="trailing" constant="8" id="5dg-9o-gjb"/>
+                                        <constraint firstItem="lKv-66-U64" firstAttribute="leading" secondItem="u35-28-b2K" secondAttribute="trailing" constant="8" id="1s9-cX-Xqh"/>
                                         <constraint firstItem="M0K-e6-gDl" firstAttribute="leading" secondItem="Xls-gW-08A" secondAttribute="leading" constant="8" id="7iz-zQ-dva"/>
+                                        <constraint firstItem="u35-28-b2K" firstAttribute="top" secondItem="Xls-gW-08A" secondAttribute="top" constant="17" id="CtN-cC-O5k"/>
+                                        <constraint firstAttribute="bottom" secondItem="u35-28-b2K" secondAttribute="bottom" constant="17" id="MMB-6d-8EY"/>
                                         <constraint firstAttribute="bottom" secondItem="M0K-e6-gDl" secondAttribute="bottom" constant="8" id="WIA-HQ-uUl"/>
                                         <constraint firstItem="M0K-e6-gDl" firstAttribute="top" secondItem="Xls-gW-08A" secondAttribute="top" constant="8" id="amC-5c-7zA"/>
-                                        <constraint firstAttribute="bottom" secondItem="lKv-66-U64" secondAttribute="bottom" constant="8" id="eOb-8d-IQC"/>
+                                        <constraint firstAttribute="trailing" secondItem="lKv-66-U64" secondAttribute="trailing" constant="8" id="gkH-KR-Shs"/>
+                                        <constraint firstAttribute="bottom" secondItem="lKv-66-U64" secondAttribute="bottom" constant="17" id="naI-gJ-e84"/>
                                         <constraint firstItem="M0K-e6-gDl" firstAttribute="width" secondItem="Xls-gW-08A" secondAttribute="width" multiplier="1:2" id="oZR-e1-g6X"/>
+                                        <constraint firstItem="lKv-66-U64" firstAttribute="top" secondItem="Xls-gW-08A" secondAttribute="top" constant="17" id="sbc-kH-LVx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -184,6 +195,7 @@
         <image name="MapIcon" width="24" height="24"/>
         <image name="ProfileIcon" width="24" height="24"/>
         <image name="SpeakIcon" width="24" height="24"/>
+        <image name="TranslateIcon" width="24" height="24"/>
         <image name="VocabIcon" width="24" height="24"/>
     </resources>
 </document>

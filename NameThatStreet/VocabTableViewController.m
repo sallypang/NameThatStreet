@@ -35,9 +35,9 @@
     UIButton *speakButton = (UIButton *)sender;
     NSInteger index = speakButton.tag;
     
-    Vocab *currentVocab = [self.vocabs objectAtIndex:index];
+    VocabDoc *currentVocab = [self.vocabs objectAtIndex:index];
     
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:currentVocab.name];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:currentVocab.data.name];
     AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
     [synthesizer speakUtterance:utterance];
 }
@@ -56,6 +56,15 @@
         textField.placeholder = NSLocalizedString(@"Banana Juice, Ostrich..", @"Banana Juice, Ostrich..");
     }];
     
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.textAlignment = NSTextAlignmentCenter;
+        textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+        textField.autocorrectionType = UITextAutocorrectionTypeYes;
+        textField.returnKeyType = UIReturnKeyDone;
+        textField.placeholder = NSLocalizedString(@"Translation", @"Translation");
+    }];
+
+    
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel")
                                                            style:UIAlertActionStyleCancel
                                                          handler:^(UIAlertAction *action) {
@@ -65,9 +74,10 @@
     UIAlertAction *saveAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Add", @"Add")
                                                          style:UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction *action) {
-                                                           VocabDoc *vocab = [[VocabDoc alloc] initWithName:alertController.textFields[0].text :@""];
+                                                           VocabDoc *vocab = [[VocabDoc alloc] initWithName:alertController.textFields[0].text :alertController.textFields[1].text];
                                                            [self.vocabs addObject:vocab];
                                                            [vocab saveData];
+                                                           NSLog(@"%@", alertController.textFields[1].text);
                                                            [self.tableView reloadData];
                                                        }];
     [alertController addAction:saveAction];
@@ -75,6 +85,11 @@
     [self presentViewController:alertController animated:YES completion:nil];
 
 }
+
+- (IBAction)translateAction:(id)sender {
+//    [SVProgressHUD showSuccessWithStatus:@"Added" maskType:SVProgressHUDMaskTypeBlack];
+}
+
 
 #pragma mark - UITableViewDataSource
 
