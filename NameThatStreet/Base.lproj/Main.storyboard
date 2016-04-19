@@ -101,6 +101,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="speakButton" destination="lKv-66-U64" id="CLk-GV-pHA"/>
+                                    <outlet property="translateButton" destination="u35-28-b2K" id="KmY-UW-rar"/>
                                     <outlet property="vocabLabel" destination="M0K-e6-gDl" id="hum-Lj-Ezq"/>
                                 </connections>
                             </tableViewCell>

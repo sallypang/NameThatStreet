@@ -13,6 +13,7 @@
 #import "Vocab.h"
 #import "VocabDoc.h"
 #import "VocabDatabase.h"
+#import "SVProgressHud.h"
 
 @interface VocabTableViewController() <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
@@ -87,7 +88,19 @@
 }
 
 - (IBAction)translateAction:(id)sender {
-//    [SVProgressHUD showSuccessWithStatus:@"Added" maskType:SVProgressHUDMaskTypeBlack];
+    UIButton *translateButton = (UIButton *)sender;
+    NSInteger index = translateButton.tag;
+    
+    VocabDoc *currentVocab = [self.vocabs objectAtIndex:index];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:currentVocab.data.translatedName message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [alert dismissViewControllerAnimated:YES completion:^{
+        }];
+        
+    });
 }
 
 
@@ -106,6 +119,7 @@
     VocabDoc *currentVocab = [self.vocabs objectAtIndex:indexPath.row];
     cell.vocabLabel.text = currentVocab.data.name;
     cell.speakButton.tag = indexPath.row;
+    cell.translateButton.tag = indexPath.row;
     
     if( !cell ) {
         // create the cell and stuff

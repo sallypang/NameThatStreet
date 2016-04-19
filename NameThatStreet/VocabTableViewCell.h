@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *vocabLabel;
 @property (weak, nonatomic) IBOutlet UIButton *speakButton;
+@property (weak, nonatomic) IBOutlet UIButton *translateButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelWidthConstraint;
 
 @end
