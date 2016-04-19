@@ -24,6 +24,7 @@
 		24ABF3D01CC5573A001BA33A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24ABF3CF1CC5573A001BA33A /* MapKit.framework */; };
 		24ABF3D21CC57038001BA33A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24ABF3D11CC57038001BA33A /* CoreLocation.framework */; };
 		24ABF3D51CC57D59001BA33A /* AddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ABF3D41CC57D59001BA33A /* AddressAnnotation.m */; };
+		24ABF3D81CC68EEA001BA33A /* Vocab.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ABF3D71CC68EEA001BA33A /* Vocab.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		24ABF3D11CC57038001BA33A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		24ABF3D31CC57D59001BA33A /* AddressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressAnnotation.h; sourceTree = "<group>"; };
 		24ABF3D41CC57D59001BA33A /* AddressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressAnnotation.m; sourceTree = "<group>"; };
+		24ABF3D61CC68EEA001BA33A /* Vocab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vocab.h; sourceTree = "<group>"; };
+		24ABF3D71CC68EEA001BA33A /* Vocab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vocab.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 		24899B571CC343EF00BCF0A5 /* Vocab */ = {
 			isa = PBXGroup;
 			children = (
+				24ABF3D61CC68EEA001BA33A /* Vocab.h */,
+				24ABF3D71CC68EEA001BA33A /* Vocab.m */,
 				2459FE191CC35350009AE744 /* VocabTableViewCell.h */,
 				2459FE1A1CC35350009AE744 /* VocabTableViewCell.m */,
 				24899B501CC33F2100BCF0A5 /* VocabTableViewController.h */,
@@ -309,6 +314,7 @@
 				24899B551CC3434900BCF0A5 /* MapViewController.m in Sources */,
 				24899B5E1CC3455D00BCF0A5 /* ProfileNavigationController.m in Sources */,
 				24ABF3D51CC57D59001BA33A /* AddressAnnotation.m in Sources */,
+				24ABF3D81CC68EEA001BA33A /* Vocab.m in Sources */,
 				24899B521CC33F2100BCF0A5 /* VocabTableViewController.m in Sources */,
 				24899B281CC3225A00BCF0A5 /* main.m in Sources */,
 			);

@@ -10,6 +10,7 @@
 #import "VocabTableViewCell.h"
 #import <AVFoundation/AVFoundation.h>
 #import "Colors.h"
+#import "Vocab.h"
 
 @interface VocabTableViewController() <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
@@ -19,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.vocabs = [NSMutableArray arrayWithObjects:@"Hello", @"Goodbye", nil];
+    Vocab *hello = [[Vocab alloc] initWithName:@"Hello"];
+    self.vocabs = [NSMutableArray arrayWithObjects:hello, nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,13 +33,15 @@
     UIButton *speakButton = (UIButton *)sender;
     NSInteger index = speakButton.tag;
     
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:[self.vocabs objectAtIndex:index]];
+    Vocab *currentVocab = [self.vocabs objectAtIndex:index];
+    
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:currentVocab.name];
     AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
     [synthesizer speakUtterance:utterance];
 }
 
 - (IBAction)addVocab:(id)sender {
-    NSLog(@"PRessed");
+    NSLog(@"Pressed");
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Add Your Own Vocab!"
                                                                              message:nil
                                                                       preferredStyle:UIAlertControllerStyleAlert];
@@ -59,7 +63,8 @@
     UIAlertAction *saveAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Add", @"Add")
                                                          style:UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction *action) {
-                                                           [self.vocabs addObject:alertController.textFields[0].text];
+                                                           Vocab *vocab = [[Vocab alloc] initWithName:alertController.textFields[0].text];
+                                                           [self.vocabs addObject:vocab];
                                                            [self.tableView reloadData];
                                                        }];
     [alertController addAction:saveAction];
@@ -80,7 +85,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     VocabTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VocabCell" forIndexPath:indexPath];
-    cell.vocabLabel.text = [self.vocabs objectAtIndex:indexPath.row];
+    Vocab *currentVocab = [self.vocabs objectAtIndex:indexPath.row];
+    cell.vocabLabel.text = currentVocab.name;
     cell.speakButton.tag = indexPath.row;
     
     if( !cell ) {
