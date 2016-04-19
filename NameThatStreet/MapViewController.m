@@ -29,14 +29,22 @@
     mapView.delegate = self;
     mapView.showsUserLocation = YES;
     mapView.showsBuildings = YES;
+    
+    [mapView setScrollEnabled:YES];
+    [mapView setZoomEnabled:YES];
+    
+    CLLocationCoordinate2D annotationCoord;
+    
+    annotationCoord.latitude = 47.640071;
+    annotationCoord.longitude = -122.129598;
+    
+    AddressAnnotation *annotationPoint = [[AddressAnnotation alloc] initWithName:@"Hey" address:@"No" coordinate:annotationCoord];
+    
+    [mapView addAnnotation:annotationPoint];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    
-    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(49.1234, -123.3756);
-    AddressAnnotation *addAnnotation = [[AddressAnnotation alloc] initWithCoordinates:coord placeName:@"Hey"];
-    [self.mapView addAnnotation:addAnnotation];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,9 +57,9 @@
 
 #pragma mark - MKMapViewDelegate
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.05f, 0.05)) animated:YES];
-}
+//- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+//    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.05f, 0.05)) animated:YES];
+//}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
@@ -63,20 +71,21 @@
     
     if (!pinView) {
         pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        pinView.pinTintColor = [UIColor redColor];
+        pinView.pinTintColor = [UIColor purpleColor];
         pinView.animatesDrop = YES;
     }
     
     return pinView;
-//    if ([annotation isKindOfClass:[MKUserLocation class]])
-//        return nil;
-//    
-//    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
-//    annotationView.canShowCallout = YES;
-//    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//    
-//    return annotationView;
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
+    annotationView.canShowCallout = YES;
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    return annotationView;
 }
+
 
 #pragma mark - CLLocationManagerDelegate
 

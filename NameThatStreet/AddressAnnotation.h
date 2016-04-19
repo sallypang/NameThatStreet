@@ -9,11 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface AddressAnnotation : NSObject <MKAnnotation> {
-    CLLocationCoordinate2D coordinate;
-    NSString *title;
-}
+@interface AddressAnnotation : NSObject <MKAnnotation>
 
-- (id)initWithCoordinates:(CLLocationCoordinate2D)location placeName:(NSString *)placeName;
+- (id)initWithName:(NSString *)name address:(NSString *)address coordinate:(CLLocationCoordinate2D)coordinate;
 
 @end
