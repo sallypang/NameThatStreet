@@ -188,6 +188,8 @@
 		24899B571CC343EF00BCF0A5 /* Vocab */ = {
 			isa = PBXGroup;
 			children = (
+				24ABF3DF1CC7070E001BA33A /* AddVocabViewController.h */,
+				24ABF3E01CC7070E001BA33A /* AddVocabViewController.m */,
 				24ABF3D61CC68EEA001BA33A /* Vocab.h */,
 				24ABF3D71CC68EEA001BA33A /* Vocab.m */,
 				24ABF3DC1CC6A01F001BA33A /* VocabDatabase.h */,
@@ -207,8 +209,6 @@
 			children = (
 				24ABF3D31CC57D59001BA33A /* AddressAnnotation.h */,
 				24ABF3D41CC57D59001BA33A /* AddressAnnotation.m */,
-				24ABF3DF1CC7070E001BA33A /* AddVocabViewController.h */,
-				24ABF3E01CC7070E001BA33A /* AddVocabViewController.m */,
 				24899B531CC3434900BCF0A5 /* MapViewController.h */,
 				24899B541CC3434900BCF0A5 /* MapViewController.m */,
 			);

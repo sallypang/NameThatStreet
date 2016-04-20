@@ -14,6 +14,7 @@
 #import "VocabDoc.h"
 #import "VocabDatabase.h"
 #import "MapViewController.h"
+#import "AddVocabViewController.h"
 
 @interface VocabTableViewController() <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
@@ -47,6 +48,7 @@
 }
 
 #pragma mark - Private Functions
+
 - (IBAction)speakAction:(id)sender {
     UIButton *speakButton = (UIButton *)sender;
     NSInteger index = speakButton.tag;
@@ -99,6 +101,16 @@
     
     [self presentViewController:alertController animated:YES completion:nil];
 
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"VocabNameSegue"]) {
+        AddVocabViewController *controller = segue.destinationViewController;
+        VocabTableViewCell *cell = (VocabTableViewCell *) sender;
+        controller.vocabTextField.text = cell.vocabLabel.text;
+        controller.navigationItem.title = cell.vocabLabel.text;
+    }
 }
 
 - (IBAction)translateAction:(id)sender {

@@ -103,6 +103,7 @@
                                     <outlet property="speakButton" destination="lKv-66-U64" id="CLk-GV-pHA"/>
                                     <outlet property="translateButton" destination="u35-28-b2K" id="KmY-UW-rar"/>
                                     <outlet property="vocabLabel" destination="M0K-e6-gDl" id="hum-Lj-Ezq"/>
+                                    <segue destination="ISK-2M-5tY" kind="show" identifier="VocabNameSegue" id="ItQ-WW-fPE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -202,14 +203,13 @@
                     <navigationItem key="navigationItem" title="Map" id="Ate-H0-8FC"/>
                     <connections>
                         <outlet property="mapView" destination="8kt-GE-kgy" id="geS-p8-AEB"/>
-                        <segue destination="ISK-2M-5tY" kind="show" identifier="AddVocabSegue" id="D1z-u1-TAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDA-54-BBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-334" y="323"/>
         </scene>
-        <!--Add-->
+        <!--Vocab Name-->
         <scene sceneID="Fc6-W4-Uza">
             <objects>
                 <viewController storyboardIdentifier="AddVocabViewController" id="ISK-2M-5tY" customClass="AddVocabViewController" sceneMemberID="viewController">
@@ -221,22 +221,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-mX-lMs">
-                                <rect key="frame" x="20" y="166" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-mX-lMs">
+                                <rect key="frame" x="20" y="134" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gd7-rN-FlY" userLabel="Translated">
+                                <rect key="frame" x="20" y="234" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uk-bD-CRw">
+                                <rect key="frame" x="20" y="476" width="560" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6eI-Pp-IHY"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1uk-bD-CRw" secondAttribute="trailing" constant="20" id="10E-hh-TRb"/>
+                            <constraint firstItem="gd7-rN-FlY" firstAttribute="top" secondItem="ET7-mX-lMs" secondAttribute="bottom" constant="70" id="9C0-dU-n2v"/>
+                            <constraint firstAttribute="trailing" secondItem="gd7-rN-FlY" secondAttribute="trailing" constant="20" id="C48-dB-IDm"/>
+                            <constraint firstAttribute="trailing" secondItem="ET7-mX-lMs" secondAttribute="trailing" constant="20" id="MTE-m8-RsG"/>
+                            <constraint firstItem="1uk-bD-CRw" firstAttribute="leading" secondItem="Rdh-ar-Ut2" secondAttribute="leading" constant="20" id="RTg-5j-C2K"/>
+                            <constraint firstItem="ET7-mX-lMs" firstAttribute="leading" secondItem="Rdh-ar-Ut2" secondAttribute="leading" constant="20" id="SdZ-A3-HVD"/>
+                            <constraint firstItem="gd7-rN-FlY" firstAttribute="leading" secondItem="Rdh-ar-Ut2" secondAttribute="leading" constant="20" id="Ucs-Md-mOn"/>
+                            <constraint firstItem="ET7-mX-lMs" firstAttribute="top" secondItem="iVQ-ZK-3os" secondAttribute="bottom" constant="70" id="aZn-hG-j7z"/>
+                            <constraint firstItem="gd7-rN-FlY" firstAttribute="top" secondItem="ET7-mX-lMs" secondAttribute="bottom" constant="70" id="beA-VC-3t9"/>
+                            <constraint firstItem="k0n-kb-SJ9" firstAttribute="top" secondItem="1uk-bD-CRw" secondAttribute="bottom" constant="25" id="s4T-wS-7pK"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add" id="nbJ-Zr-xjK"/>
+                    <navigationItem key="navigationItem" title="Vocab Name" id="nbJ-Zr-xjK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="jc0-hp-mXO"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="translatedTextField" destination="gd7-rN-FlY" id="1c7-0a-FtK"/>
                         <outlet property="vocabTextField" destination="ET7-mX-lMs" id="u1D-jP-a4z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7m-t5-L4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="465" y="323"/>
+            <point key="canvasLocation" x="395" y="-468"/>
         </scene>
     </scenes>
     <resources>
