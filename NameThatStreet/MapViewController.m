@@ -85,22 +85,27 @@
     CLLocationCoordinate2D coord = [mapView convertPoint:point toCoordinateFromView:mapView];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     CLLocation *location = [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
+    __block CLPlacemark *pm = nil;
 
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         if ([placemarks count] > 0) {
-            CLPlacemark *placemark = [placemarks objectAtIndex:0];
-            [self presentLocationViewController:placemark.name];
+            pm = [placemarks objectAtIndex:0];
+            [self presentLocationViewController:pm.name];
         } else {
             NSLog(@"Could not locate");
         }
-
     }];
 }
-
-- (void)presentLocationViewController:(NSString *)placemark {
+- (void)presentLocationViewController: (NSString *)placemark {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:placemark message:@"Would you like to save this word?" preferredStyle:UIAlertControllerStyleAlert];
+    
     UIAlertAction *save = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self performSegueWithIdentifier:@"AddVocabSegue" sender:self];
+        VocabDoc *vocab = [[VocabDoc alloc] initWithName:placemark :nil];
+        VocabTableViewController *controller = [[VocabTableViewController alloc] init];
+        [controller.vocabs addObject:vocab];
+        [vocab saveData];
+        [controller.tableView reloadData];
+        NSLog(@"%lu", controller.vocabs.count);
     }];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
@@ -113,8 +118,5 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-}
 
 @end

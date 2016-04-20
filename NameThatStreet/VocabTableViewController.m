@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     NSMutableArray *loadVocabs = [VocabDatabase loadVocabDocs];
     self.vocabs = loadVocabs;
     
@@ -35,6 +34,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    NSMutableArray *loadVocabs = [VocabDatabase loadVocabDocs];
+    self.vocabs = loadVocabs;
     [self.tableView reloadData];
 }
 
