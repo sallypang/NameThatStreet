@@ -113,7 +113,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Vocab" id="5To-ue-Q2p">
-                        <barButtonItem key="rightBarButtonItem" title="+Add" id="RXU-B9-YcS">
+                        <barButtonItem key="rightBarButtonItem" image="PlusIcon" id="RXU-B9-YcS">
                             <connections>
                                 <action selector="addVocab:" destination="79K-c1-4x1" id="1mu-rQ-pLb"/>
                             </connections>
@@ -266,6 +266,7 @@
     </scenes>
     <resources>
         <image name="MapIcon" width="24" height="24"/>
+        <image name="PlusIcon" width="24" height="24"/>
         <image name="ProfileIcon" width="24" height="24"/>
         <image name="SpeakIcon" width="24" height="24"/>
         <image name="TranslateIcon" width="24" height="24"/>
