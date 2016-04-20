@@ -172,7 +172,7 @@
     if( [indexPath row] % 2)
         [cell setBackgroundColor:[UIColor whiteColor]];
     else
-        [cell setBackgroundColor:[UIColor colorFromHexString:@"#ddffe0"]];
+        [cell setBackgroundColor:[UIColor colorFromHexString:@"#ffe0e0"]];
 
     
     return cell;

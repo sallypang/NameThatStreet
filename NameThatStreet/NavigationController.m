@@ -30,7 +30,7 @@
     [self.navigationBar setShadowImage:[UIImage new]];
     [self.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationBar setBarTintColor:[UIColor colorFromHexString:@"#70c975"]];
+    [self.navigationBar setBarTintColor:[UIColor colorFromHexString:@"#ff7c7c"]];
 }
 
 - (void)didReceiveMemoryWarning {
