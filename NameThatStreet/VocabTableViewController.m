@@ -115,6 +115,18 @@
     }
 }
 
+- (IBAction)done:(UIStoryboardSegue *)segue {
+    AddVocabViewController *controller = segue.sourceViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    VocabDoc *currentVocab = [self.vocabs objectAtIndex:indexPath.row];
+    currentVocab.data.name = controller.vocabName;
+    currentVocab.data.translatedName = controller.translatedVocabName;
+
+    [currentVocab saveData];
+ 
+    [self.tableView reloadData];
+}
+
 - (IBAction)translateAction:(id)sender {
     UIButton *translateButton = (UIButton *)sender;
     NSInteger index = translateButton.tag;

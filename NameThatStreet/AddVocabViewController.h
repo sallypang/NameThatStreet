@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VocabDoc.h"
 
 @interface AddVocabViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UITextField *vocabTextField;
-@property (nonatomic, strong) IBOutlet UITextField *translatedTextField;
+@property (nonatomic, weak) IBOutlet UITextField *vocabTextField;
+@property (nonatomic, weak) IBOutlet UITextField *translatedTextField;
 
 @property (nonatomic, strong) NSString *vocabName;
 @property (nonatomic, strong) NSString *translatedVocabName;
-
 
 @end
