@@ -104,8 +104,16 @@
         VocabTableViewController *controller = [[VocabTableViewController alloc] init];
         [controller.vocabs addObject:vocab];
         [vocab saveData];
-        [controller.tableView reloadData];
-        NSLog(@"%lu", controller.vocabs.count);
+        
+        UIAlertController *saved = [UIAlertController alertControllerWithTitle:@"Saved" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:saved animated:YES completion:nil];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [saved dismissViewControllerAnimated:YES completion:^{
+            }];
+            
+        });
     }];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
