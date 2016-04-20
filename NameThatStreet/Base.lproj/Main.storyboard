@@ -185,11 +185,30 @@
                     <navigationItem key="navigationItem" id="Ate-H0-8FC"/>
                     <connections>
                         <outlet property="mapView" destination="8kt-GE-kgy" id="geS-p8-AEB"/>
+                        <segue destination="ISK-2M-5tY" kind="show" identifier="AddVocabSegue" id="OTQ-6g-M7l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDA-54-BBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1202" y="331"/>
+            <point key="canvasLocation" x="-668" y="351"/>
+        </scene>
+        <!--Add Vocab View Controller-->
+        <scene sceneID="Fc6-W4-Uza">
+            <objects>
+                <viewController storyboardIdentifier="AddVocabViewController" id="ISK-2M-5tY" customClass="AddVocabViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iVQ-ZK-3os"/>
+                        <viewControllerLayoutGuide type="bottom" id="k0n-kb-SJ9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rdh-ar-Ut2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V7m-t5-L4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45" y="351"/>
         </scene>
     </scenes>
     <resources>

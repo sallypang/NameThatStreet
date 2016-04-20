@@ -8,8 +8,12 @@
 
 #import "MapViewController.h"
 #import "AddressAnnotation.h"
+#import "VocabTableViewController.h"
+#import "VocabDoc.h"
 
 @interface MapViewController ()
+
+@property (nonatomic) BOOL *firstLaunch;
 
 @end
 
@@ -19,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.firstLaunch = YES;
     self.locationManager = [[CLLocationManager alloc] init];
     
     self.locationManager.delegate = self;
@@ -29,18 +34,14 @@
     mapView.delegate = self;
     mapView.showsUserLocation = YES;
     mapView.showsBuildings = YES;
-    
+
     [mapView setScrollEnabled:YES];
     [mapView setZoomEnabled:YES];
+    [mapView setShowsPointsOfInterest:YES];
     
-    CLLocationCoordinate2D annotationCoord;
-    
-    annotationCoord.latitude = 47.640071;
-    annotationCoord.longitude = -122.129598;
-    
-    AddressAnnotation *annotationPoint = [[AddressAnnotation alloc] initWithName:@"Hey" address:@"No" coordinate:annotationCoord];
-    
-    [mapView addAnnotation:annotationPoint];
+    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    gesture.minimumPressDuration = 1.0;
+    [mapView addGestureRecognizer:gesture];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -57,9 +58,15 @@
 
 #pragma mark - MKMapViewDelegate
 
-//- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-//    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.05f, 0.05)) animated:YES];
-//}
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    if (self.firstLaunch) {
+        [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.05f, 0.05)) animated:YES];
+    }
+    self.firstLaunch = NO;
+}
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
@@ -73,6 +80,7 @@
         pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
         pinView.pinTintColor = [UIColor purpleColor];
         pinView.animatesDrop = YES;
+        pinView.canShowCallout = YES;
     }
     
     return pinView;
@@ -95,6 +103,46 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+}
+
+- (void)handleGesture:(UIGestureRecognizer *)gesture {
+    if (gesture.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    
+    CGPoint point = [gesture locationInView:mapView];
+    CLLocationCoordinate2D coord = [mapView convertPoint:point toCoordinateFromView:mapView];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
+
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        if ([placemarks count] > 0) {
+            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            [self presentLocationViewController:placemark.name];
+        } else {
+            NSLog(@"Could not locate");
+        }
+
+    }];
+}
+
+- (void)presentLocationViewController:(NSString *)placemark {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:placemark message:@"Would you like to save this word?" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *save = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+          }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *action) {
+                                                   }];
+
+    [alert addAction:save];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
 }
 
 @end

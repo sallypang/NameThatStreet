@@ -13,19 +13,31 @@
 #import "Vocab.h"
 #import "VocabDoc.h"
 #import "VocabDatabase.h"
-#import "SVProgressHud.h"
+#import "MapViewController.h"
 
 @interface VocabTableViewController() <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
+@property (nonatomic, strong) UIRefreshControl *refresh;
 @end
 
 @implementation VocabTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     NSMutableArray *loadVocabs = [VocabDatabase loadVocabDocs];
     self.vocabs = loadVocabs;
+    
+    self.refresh = [[UIRefreshControl alloc] init];
+    [self.tableView addSubview:self.refresh];
+    [self.refresh addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -44,7 +56,6 @@
 }
 
 - (IBAction)addVocab:(id)sender {
-    NSLog(@"Pressed");
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Add Your Own Vocab!"
                                                                              message:nil
                                                                       preferredStyle:UIAlertControllerStyleAlert];
@@ -103,6 +114,11 @@
     });
 }
 
+- (void)refreshTable {
+    [self.refresh endRefreshing];
+    [self.tableView reloadData];
+}
+
 
 #pragma mark - UITableViewDataSource
 
@@ -128,6 +144,7 @@
         [cell setBackgroundColor:[UIColor whiteColor]];
     else
         [cell setBackgroundColor:[UIColor colorFromHexString:@"#ddffe0"]];
+
     
     return cell;
 }
