@@ -202,7 +202,7 @@
                     <navigationItem key="navigationItem" title="Map" id="Ate-H0-8FC"/>
                     <connections>
                         <outlet property="mapView" destination="8kt-GE-kgy" id="geS-p8-AEB"/>
-                        <segue destination="ISK-2M-5tY" kind="show" id="D1z-u1-TAr"/>
+                        <segue destination="ISK-2M-5tY" kind="show" identifier="AddVocabSegue" id="D1z-u1-TAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDA-54-BBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -220,9 +220,19 @@
                     <view key="view" contentMode="scaleToFill" id="Rdh-ar-Ut2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-mX-lMs">
+                                <rect key="frame" x="20" y="166" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="nbJ-Zr-xjK"/>
+                    <connections>
+                        <outlet property="vocabTextField" destination="ET7-mX-lMs" id="u1D-jP-a4z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7m-t5-L4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

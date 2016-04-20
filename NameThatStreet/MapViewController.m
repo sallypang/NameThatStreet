@@ -66,36 +66,6 @@
     self.firstLaunch = NO;
 }
 
--(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-}
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    if ([annotation isKindOfClass:[MKUserLocation class]]) {
-        return nil;
-    }
-    
-    static NSString *identifier= @"identifier";
-    MKPinAnnotationView *pinView = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    
-    if (!pinView) {
-        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        pinView.pinTintColor = [UIColor purpleColor];
-        pinView.animatesDrop = YES;
-        pinView.canShowCallout = YES;
-    }
-    
-    return pinView;
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
-    
-    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
-    annotationView.canShowCallout = YES;
-    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    return annotationView;
-}
-
-
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -130,8 +100,7 @@
 - (void)presentLocationViewController:(NSString *)placemark {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:placemark message:@"Would you like to save this word?" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *save = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        AddVocabViewController *controller = [[AddVocabViewController alloc] init];
-        [self.navigationController presentViewController:controller animated:YES completion:nil];
+        [self performSegueWithIdentifier:@"AddVocabSegue" sender:self];
     }];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"

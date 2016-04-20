@@ -10,4 +10,6 @@
 
 @interface AddVocabViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *vocabTextField;
+
 @end
