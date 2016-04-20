@@ -7,7 +7,6 @@
 //
 
 #import "NavigationController.h"
-#import "MapViewController.h"
 #import "Colors.h"
 
 @implementation NavigationController
