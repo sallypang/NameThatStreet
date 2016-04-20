@@ -18,7 +18,7 @@
                     <connections>
                         <segue destination="cvI-Ut-Y4F" kind="relationship" relationship="viewControllers" id="3eg-J0-HZD"/>
                         <segue destination="rRM-2u-OJN" kind="relationship" relationship="viewControllers" id="167-lb-OKx"/>
-                        <segue destination="gem-X1-DQl" kind="relationship" relationship="viewControllers" id="vOP-Zc-iwu"/>
+                        <segue destination="dtJ-Cf-o81" kind="relationship" relationship="viewControllers" id="fmJ-lS-4tV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAd-FB-PDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,6 +158,23 @@
             <point key="canvasLocation" x="-1202" y="-476"/>
         </scene>
         <!--Map-->
+        <scene sceneID="lTR-GB-eNu">
+            <objects>
+                <navigationController id="dtJ-Cf-o81" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="jJ7-ce-GvN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qOt-mk-5Dl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gem-X1-DQl" kind="relationship" relationship="rootViewController" id="zLq-aU-W1L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HcD-5p-Ufp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1202" y="344"/>
+        </scene>
+        <!--Map-->
         <scene sceneID="e7t-GD-Bjg">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="gem-X1-DQl" userLabel="Map" customClass="MapViewController" sceneMemberID="viewController">
@@ -182,17 +199,17 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="lvs-R1-Xxu"/>
-                    <navigationItem key="navigationItem" id="Ate-H0-8FC"/>
+                    <navigationItem key="navigationItem" title="Map" id="Ate-H0-8FC"/>
                     <connections>
                         <outlet property="mapView" destination="8kt-GE-kgy" id="geS-p8-AEB"/>
-                        <segue destination="ISK-2M-5tY" kind="show" identifier="AddVocabSegue" id="OTQ-6g-M7l"/>
+                        <segue destination="ISK-2M-5tY" kind="show" id="D1z-u1-TAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDA-54-BBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-668" y="351"/>
+            <point key="canvasLocation" x="-334" y="323"/>
         </scene>
-        <!--Add Vocab View Controller-->
+        <!--Add-->
         <scene sceneID="Fc6-W4-Uza">
             <objects>
                 <viewController storyboardIdentifier="AddVocabViewController" id="ISK-2M-5tY" customClass="AddVocabViewController" sceneMemberID="viewController">
@@ -205,10 +222,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add" id="nbJ-Zr-xjK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7m-t5-L4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="351"/>
+            <point key="canvasLocation" x="465" y="323"/>
         </scene>
     </scenes>
     <resources>

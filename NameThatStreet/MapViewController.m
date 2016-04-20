@@ -10,6 +10,7 @@
 #import "AddressAnnotation.h"
 #import "VocabTableViewController.h"
 #import "VocabDoc.h"
+#import "AddVocabViewController.h"
 
 @interface MapViewController ()
 
@@ -129,7 +130,9 @@
 - (void)presentLocationViewController:(NSString *)placemark {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:placemark message:@"Would you like to save this word?" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *save = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-          }];
+        AddVocabViewController *controller = [[AddVocabViewController alloc] init];
+        [self.navigationController presentViewController:controller animated:YES completion:nil];
+    }];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
                                                      style:UIAlertActionStyleDefault
