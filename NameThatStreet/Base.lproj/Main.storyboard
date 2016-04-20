@@ -18,7 +18,7 @@
                     <connections>
                         <segue destination="cvI-Ut-Y4F" kind="relationship" relationship="viewControllers" id="3eg-J0-HZD"/>
                         <segue destination="rRM-2u-OJN" kind="relationship" relationship="viewControllers" id="167-lb-OKx"/>
-                        <segue destination="dtJ-Cf-o81" kind="relationship" relationship="viewControllers" id="fmJ-lS-4tV"/>
+                        <segue destination="gem-X1-DQl" kind="relationship" relationship="viewControllers" id="V77-EO-uTP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAd-FB-PDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,23 +159,6 @@
             <point key="canvasLocation" x="-1202" y="-476"/>
         </scene>
         <!--Map-->
-        <scene sceneID="lTR-GB-eNu">
-            <objects>
-                <navigationController id="dtJ-Cf-o81" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="jJ7-ce-GvN"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qOt-mk-5Dl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="gem-X1-DQl" kind="relationship" relationship="rootViewController" id="zLq-aU-W1L"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HcD-5p-Ufp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1202" y="344"/>
-        </scene>
-        <!--Map-->
         <scene sceneID="e7t-GD-Bjg">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="gem-X1-DQl" userLabel="Map" customClass="MapViewController" sceneMemberID="viewController">
@@ -207,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDA-54-BBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-334" y="323"/>
+            <point key="canvasLocation" x="-1202" y="297"/>
         </scene>
         <!--Vocab Name-->
         <scene sceneID="Fc6-W4-Uza">
@@ -221,14 +204,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-mX-lMs">
-                                <rect key="frame" x="20" y="134" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ET7-mX-lMs">
+                                <rect key="frame" x="20" y="134" width="560" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gd7-rN-FlY" userLabel="Translated">
-                                <rect key="frame" x="20" y="234" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gd7-rN-FlY" userLabel="Translated">
+                                <rect key="frame" x="20" y="233" width="560" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uk-bD-CRw">

@@ -7,6 +7,8 @@
 //
 
 #import "AddVocabViewController.h"
+#import "VocabTableViewController.h"
+#import "VocabDoc.h"
 
 @interface AddVocabViewController()
 
@@ -14,8 +16,14 @@
 
 @implementation AddVocabViewController
 
+@synthesize vocabTextField;
+@synthesize vocabName;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.vocabTextField.text = self.vocabName;
+    self.translatedTextField.text = self.translatedVocabName;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -29,4 +37,8 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark - Getters / Setters
+
+
 @end

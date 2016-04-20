@@ -107,9 +107,11 @@
     
     if ([segue.identifier isEqualToString:@"VocabNameSegue"]) {
         AddVocabViewController *controller = segue.destinationViewController;
-        VocabTableViewCell *cell = (VocabTableViewCell *) sender;
-        controller.vocabTextField.text = cell.vocabLabel.text;
-        controller.navigationItem.title = cell.vocabLabel.text;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        VocabDoc *currentVocab = [self.vocabs objectAtIndex:indexPath.row];
+        controller.vocabName = currentVocab.data.name;
+        controller.navigationItem.title = currentVocab.data.name;
+        controller.translatedVocabName = currentVocab.data.translatedName;
     }
 }
 

@@ -10,7 +10,11 @@
 
 @interface AddVocabViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *vocabTextField;
-@property (weak, nonatomic) IBOutlet UITextField *translatedTextField;
+@property (nonatomic, strong) IBOutlet UITextField *vocabTextField;
+@property (nonatomic, strong) IBOutlet UITextField *translatedTextField;
+
+@property (nonatomic, strong) NSString *vocabName;
+@property (nonatomic, strong) NSString *translatedVocabName;
+
 
 @end
