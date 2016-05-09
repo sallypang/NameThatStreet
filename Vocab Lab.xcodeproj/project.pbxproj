@@ -44,7 +44,7 @@
 		204A30F8EC119A958AB2022D /* libPods-NameThatStreet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NameThatStreet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2459FE191CC35350009AE744 /* VocabTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VocabTableViewCell.h; sourceTree = "<group>"; };
 		2459FE1A1CC35350009AE744 /* VocabTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VocabTableViewCell.m; sourceTree = "<group>"; };
-		24899B231CC3225A00BCF0A5 /* NameThatStreet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NameThatStreet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24899B231CC3225A00BCF0A5 /* Vocab Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vocab Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24899B271CC3225A00BCF0A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24899B291CC3225A00BCF0A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24899B2A1CC3225A00BCF0A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		24899B321CC3225A00BCF0A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24899B351CC3225A00BCF0A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24899B371CC3225A00BCF0A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24899B3C1CC3225A00BCF0A5 /* NameThatStreetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NameThatStreetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24899B3C1CC3225A00BCF0A5 /* Vocab Lab.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vocab Lab.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24899B401CC3225A00BCF0A5 /* NameThatStreetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NameThatStreetTests.m; sourceTree = "<group>"; };
 		24899B421CC3225A00BCF0A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24899B4D1CC33F0400BCF0A5 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -120,8 +120,8 @@
 		24899B241CC3225A00BCF0A5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24899B231CC3225A00BCF0A5 /* NameThatStreet.app */,
-				24899B3C1CC3225A00BCF0A5 /* NameThatStreetTests.xctest */,
+				24899B231CC3225A00BCF0A5 /* Vocab Lab.app */,
+				24899B3C1CC3225A00BCF0A5 /* Vocab Lab.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,9 +241,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		24899B221CC3225A00BCF0A5 /* NameThatStreet */ = {
+		24899B221CC3225A00BCF0A5 /* Vocab Lab */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24899B451CC3225A00BCF0A5 /* Build configuration list for PBXNativeTarget "NameThatStreet" */;
+			buildConfigurationList = 24899B451CC3225A00BCF0A5 /* Build configuration list for PBXNativeTarget "Vocab Lab" */;
 			buildPhases = (
 				3CC995E67E91428E9B8A620E /* Check Pods Manifest.lock */,
 				24899B1F1CC3225A00BCF0A5 /* Sources */,
@@ -256,14 +256,14 @@
 			);
 			dependencies = (
 			);
-			name = NameThatStreet;
+			name = "Vocab Lab";
 			productName = NameThatStreet;
-			productReference = 24899B231CC3225A00BCF0A5 /* NameThatStreet.app */;
+			productReference = 24899B231CC3225A00BCF0A5 /* Vocab Lab.app */;
 			productType = "com.apple.product-type.application";
 		};
-		24899B3B1CC3225A00BCF0A5 /* NameThatStreetTests */ = {
+		24899B3B1CC3225A00BCF0A5 /* Vocab LabTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24899B481CC3225A00BCF0A5 /* Build configuration list for PBXNativeTarget "NameThatStreetTests" */;
+			buildConfigurationList = 24899B481CC3225A00BCF0A5 /* Build configuration list for PBXNativeTarget "Vocab LabTests" */;
 			buildPhases = (
 				24899B381CC3225A00BCF0A5 /* Sources */,
 				24899B391CC3225A00BCF0A5 /* Frameworks */,
@@ -274,9 +274,9 @@
 			dependencies = (
 				24899B3E1CC3225A00BCF0A5 /* PBXTargetDependency */,
 			);
-			name = NameThatStreetTests;
+			name = "Vocab LabTests";
 			productName = NameThatStreetTests;
-			productReference = 24899B3C1CC3225A00BCF0A5 /* NameThatStreetTests.xctest */;
+			productReference = 24899B3C1CC3225A00BCF0A5 /* Vocab Lab.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -298,7 +298,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 24899B1E1CC3225A00BCF0A5 /* Build configuration list for PBXProject "NameThatStreet" */;
+			buildConfigurationList = 24899B1E1CC3225A00BCF0A5 /* Build configuration list for PBXProject "Vocab Lab" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -311,8 +311,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24899B221CC3225A00BCF0A5 /* NameThatStreet */,
-				24899B3B1CC3225A00BCF0A5 /* NameThatStreetTests */,
+				24899B221CC3225A00BCF0A5 /* Vocab Lab */,
+				24899B3B1CC3225A00BCF0A5 /* Vocab LabTests */,
 			);
 		};
 /* End PBXProject section */
@@ -420,7 +420,7 @@
 /* Begin PBXTargetDependency section */
 		24899B3E1CC3225A00BCF0A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 24899B221CC3225A00BCF0A5 /* NameThatStreet */;
+			target = 24899B221CC3225A00BCF0A5 /* Vocab Lab */;
 			targetProxy = 24899B3D1CC3225A00BCF0A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -537,7 +537,7 @@
 				INFOPLIST_FILE = NameThatStreet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pangsally.com.NameThatStreet;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Vocab Lab";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -552,7 +552,7 @@
 				INFOPLIST_FILE = NameThatStreet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pangsally.com.NameThatStreet;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Vocab Lab";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -564,8 +564,8 @@
 				INFOPLIST_FILE = NameThatStreetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pangsally.com.NameThatStreetTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NameThatStreet.app/NameThatStreet";
+				PRODUCT_NAME = "Vocab Lab";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vocab Lab.app/Vocab Lab";
 			};
 			name = Debug;
 		};
@@ -576,15 +576,15 @@
 				INFOPLIST_FILE = NameThatStreetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pangsally.com.NameThatStreetTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NameThatStreet.app/NameThatStreet";
+				PRODUCT_NAME = "Vocab Lab";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vocab Lab.app/Vocab Lab";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		24899B1E1CC3225A00BCF0A5 /* Build configuration list for PBXProject "NameThatStreet" */ = {
+		24899B1E1CC3225A00BCF0A5 /* Build configuration list for PBXProject "Vocab Lab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24899B431CC3225A00BCF0A5 /* Debug */,
@@ -593,7 +593,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24899B451CC3225A00BCF0A5 /* Build configuration list for PBXNativeTarget "NameThatStreet" */ = {
+		24899B451CC3225A00BCF0A5 /* Build configuration list for PBXNativeTarget "Vocab Lab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24899B461CC3225A00BCF0A5 /* Debug */,
@@ -602,7 +602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24899B481CC3225A00BCF0A5 /* Build configuration list for PBXNativeTarget "NameThatStreetTests" */ = {
+		24899B481CC3225A00BCF0A5 /* Build configuration list for PBXNativeTarget "Vocab LabTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24899B491CC3225A00BCF0A5 /* Debug */,
