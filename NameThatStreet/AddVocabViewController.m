@@ -8,6 +8,7 @@
 
 #import "AddVocabViewController.h"
 #import "VocabTableViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface AddVocabViewController() <UITextFieldDelegate> {
     UIBarButtonItem *_nextToolBarButton;
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) UIToolbar *inputToolBar;
 @property (nonatomic, weak) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *speakButton;
 
 @end
 
@@ -92,6 +94,14 @@
 }
 
 #pragma mark - Private Functions
+- (IBAction)speakAction:(id)sender {
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:self.vocabName];
+    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
+    [synthesizer speakUtterance:utterance];
+
+
+
+}
 
 - (IBAction)editAction:(id)sender {
     self.editButton.selected = !self.editButton.selected;
